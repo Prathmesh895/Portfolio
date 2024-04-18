@@ -1,5 +1,6 @@
 // import { Inter } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Navbar from '@/components/navbar'
 import { Providers } from "./Providers";
 import Footer from '@/components/footer'
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <div className="mt-[5%] -z-10">{children}</div>
         <div><Footer/></div>
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   );
