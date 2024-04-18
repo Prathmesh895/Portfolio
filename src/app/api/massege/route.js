@@ -1,25 +1,54 @@
+// import { ConnectDB } from "@/models/sender";
+// import Sender from "@/lib/connect";
+// import { NextResponse } from "next/server";
+
+
+// export async function POST (req){
+//     try {
+//         const {email,name,phone,subject,massege} = await req.json();
+//         await ConnectDB();
+
+//         await Sender.create({email,name,phone,subject,massege});
+//         return NextResponse.json({ message: "Messege send." }, { status: 201 });
+//     } catch (error) {
+//         return NextResponse.json({ message: "An error occurred while Sending Message." }, { status: 500 });   
+//     }
+// }
+// export async function GET (req){
+//     try {
+//         await ConnectDB();
+//         const user=await Sender.find({});
+//         return NextResponse.json({user});
+//     } catch (error) {
+//         return NextResponse.json({ message: "An error occurred while receiving Message." }, { status: 500 });      
+//     }
+// }
+
+
 import { ConnectDB } from "@/models/sender";
 import Sender from "@/lib/connect";
 import { NextResponse } from "next/server";
 
-
-export async function POST (req){
+export async function POST(req) {
     try {
-        const {email,name,phone,subject,massege} = await req.json();
+        const { email, name, phone, subject, message } = await req.json();
         await ConnectDB();
 
-        await Sender.create({email,name,phone,subject,massege});
-        return NextResponse.json({ message: "Messege send." }, { status: 201 });
+        await Sender.create({ email, name, phone, subject, message });
+        return NextResponse.json({ message: "Message sent." }, { status: 201 });
     } catch (error) {
-        return NextResponse.json({ message: "An error occurred while Sending Message." }, { status: 500 });   
+        console.error("Error sending message:", error);
+        return NextResponse.json({ message: "An error occurred while sending message." }, { status: 500 });
     }
 }
-export async function GET (req){
+
+export async function GET(req) {
     try {
         await ConnectDB();
-        const user=await Sender.find({});
-        return NextResponse.json({user});
+        const users = await Sender.find({});
+        return NextResponse.json({ users });
     } catch (error) {
-        return NextResponse.json({ message: "An error occurred while receiving Message." }, { status: 500 });      
+        console.error("Error receiving messages:", error);
+        return NextResponse.json({ message: "An error occurred while receiving messages." }, { status: 500 });
     }
 }

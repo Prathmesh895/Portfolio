@@ -30,13 +30,7 @@ const[massege,setMassege]=useState('');
           massege  
         }),
       })
-      if (res.ok) {
-        const form = e.target;
-        form.reset();
-       
-    } else {
-        console.log("cannot send messege")
-    }
+     
     } catch (error) {
       console.log("Unable to send Masseage")
     }
