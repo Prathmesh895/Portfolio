@@ -21,6 +21,7 @@ module.exports = {
        "blue":'#007bff',
        "gold":"#ffd700",
        "pink":"#c30cfa",
+       "B7B7B7":"#B7B7B7"
     
       },
       height: {

@@ -8,6 +8,11 @@
     font-family: "Cormorant Garamond", serif;
   }
 }
+@layer base {
+  input {
+    @apply dark:bg-bdark p-3 rounded-md border dark:border-gray-600 hover:border-orange-600; 
+  }
+}
 @keyframes slideRight {
   0% {
     transform: translateX(-100%);
@@ -57,4 +62,5 @@
 .animate-slideUp {
   animation: slideUp 1s ease-in-out;
 }
+
 
