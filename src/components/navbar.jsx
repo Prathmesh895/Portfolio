@@ -29,8 +29,8 @@ function Navbar() {
         { title: 'CONTACT', href: '/contact' },
     ]
     return (
-        <section className={`fixed top-0 left-0 w-full bg-white dark:bg-fdark shadow-lg z-${zIndex}`}>
-            <nav className='flex justify-between px-6 lg:px-36 py-4 dark:shadow shadow font-semibold  items-center w-full'>
+        <section className={`fixed top-0 left-0 w-full  dark:bg-bdark bg-white z-${zIndex}`}>
+            <nav className='flex justify-between px-6 lg:px-36 py-4 border-b dark:border-gray-700 font-semibold  items-center w-full'>
                 <div className='text-2xl'>Prathmesh Gatade</div>
 
                 <div className=' lg:flex space-x-10  text-lg items-center hidden'>

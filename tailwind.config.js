@@ -20,9 +20,12 @@ module.exports = {
        "yellow":'#ffc107',
        "blue":'#007bff',
        "gold":"#ffd700",
-       "pink":"#c30cfa",
+       "pink1":"#c30cfa",
        "B7B7B7":"#B7B7B7"
     
+      },
+      animation: {
+        'spin-slow': 'spin 10s linear infinite', // Adjust duration as needed
       },
       height: {
         'h': '34rem',
