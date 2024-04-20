@@ -13,7 +13,7 @@ import Skills from '@/components/skills'
 
 function homepage() {
   const handleDownload = () => {
-    window.open('/myresume.pdf', '_blank');
+    window.open('/Prathmesh-Gatade.pdf', '_blank');
   };
   return (
     <>

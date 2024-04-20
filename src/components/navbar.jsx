@@ -15,7 +15,7 @@ function Navbar() {
     const { theme } = useTheme();
   
     const handleDownload = () => {
-        window.open('/myresume.pdf', '_blank');
+        window.open('/Prathmesh-Gatade.pdf', '_blank');
       };
   // Determine the z-index value based on the theme
   const zIndex = theme === 'dark' ? 10 : 50;
