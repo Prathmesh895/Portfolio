@@ -14,6 +14,9 @@ function Navbar() {
     const [open, setOpen] = useState('');
     const { theme } = useTheme();
   
+    const handleDownload = () => {
+        window.open('/myresume.pdf', '_blank');
+      };
   // Determine the z-index value based on the theme
   const zIndex = theme === 'dark' ? 10 : 50;
 
@@ -40,7 +43,7 @@ function Navbar() {
                         </p>
                     ))}
                     <h1 className=' py-1 px-4 rounded-3xl dark:hover:bg-gray-700 '><Link href='/hire_me'>Hire Me</Link></h1>
-                    <h1 className=' py-2 px-4 rounded border-orange-600 border'><Link href=''>DOWNLOAD CV</Link></h1>
+                    <button onClick={handleDownload} className=' py-2 px-4 rounded border-orange-600 border'>DOWNLOAD CV</button>
                     <h1><Theme /></h1>
                 </div>
                 <div className='text-lg lg:hidden'>

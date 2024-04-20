@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
-import PROF from '/public/file.png'
 import Photo1 from '/public/education.avif'
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { BsInstagram } from "react-icons/bs";
@@ -13,6 +12,9 @@ import Skills from '@/components/skills'
 
 
 function homepage() {
+  const handleDownload = () => {
+    window.open('/myresume.pdf', '_blank');
+  };
   return (
     <>
       <section className='lg:flex lg:mx-36 mx-6 lg:items-center mt-40'>
@@ -75,7 +77,7 @@ function homepage() {
               <Link href='https://www.instagram.com/mi_prathmeshgatade/' target='_blank' className='dark:bg-gray-800 p-2 rounded-full'> <BsInstagram size={18} /></Link>
               <Link href='https://www.instagram.com/mi_prathmeshgatade/' target='_blank' className='dark:bg-gray-800 p-2 rounded-full'> <FaTwitter size={22} /></Link>
             </div>
-            <button className='bg-green  py-3 animate-bounce mt-10  px-6 text-xl text-black dark:hover:bg-fdark hover:border-white hover:border dark:hover:text-green ease-out duration-300'>
+            <button onClick={handleDownload} className='bg-green  py-3 animate-bounce mt-10  px-6 text-xl text-black dark:hover:bg-fdark hover:border-white hover:border dark:hover:text-green ease-out duration-300'>
               DOWNLOAD RESUME
             </button>
           </div>
