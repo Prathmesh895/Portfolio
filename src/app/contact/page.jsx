@@ -6,33 +6,50 @@ import { BsTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 
 export default function page() {
-const[name,setName]=useState('');
-const[email,setEmail]=useState('');
-const[phone,setPhone]=useState('');
-const[subject,setSubject]=useState('');
-const[massege,setMassege]=useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [subject, setSubject] = useState('');
+  const [massege, setMassege] = useState('');
+  const [isSend, setIssend] = useState('');
+  const [error, setError] = useState('');
 
-  const handleOnsubmit= async (e)=>{
+  const handleOnsubmit = async (e) => {
     e.preventDefault();
+    if (!name || !email || !phone || !subject || !massege) {
+      setError("Please Enter All fields")
+      return;
+    }
 
-    console.log(name,email,phone,subject,massege);
+    // console.log(name,email,phone,subject,massege);
     try {
-      const res= await fetch('/api/massege', {
+      const res = await fetch('/api/massege', {
         method: "POST",
         headers: {
-            "Content-type": "application/json",
+          "Content-type": "application/json",
         },
         body: JSON.stringify({
           name,
           email,
           phone,
           subject,
-          massege  
+          massege
         }),
-      })
-     
+      });
+      if (res.ok) {
+        setIssend("Message send Successfully");
+        setEmail('');
+        setMassege('');
+        setPhone('');
+        setSubject('');
+        setName("");
+        // console.log("messege send")
+      } else {
+        setError("Unable to send Message")
+
+      }
     } catch (error) {
-      console.log("Unable to send Masseage")
+      // console.log("Unable to send Masseage")
     }
 
   }
@@ -45,6 +62,7 @@ const[massege,setMassege]=useState('');
       <section className='flex flex-col  items-center lg:mt-36 mt-10 mb-10 space-y-6'>
         <h1 className='text-lg text-orange-400'>C O N T A C T &nbsp; M E </h1>
         <h1 className='lg:text-6xl text-2xl'>LET’S START A NEW PROJECT</h1>
+       <div className='lg:block hidden'> <h1 className='text-green text-lg'> {isSend }</h1> <p className='text-red-500 text-lg'>{error}</p></div>
       </section>
       <section className='lg:mx-36 m-5 lg:flex'>
         <div className='w-1/3 lg:block hidden'>
@@ -68,7 +86,7 @@ const[massege,setMassege]=useState('');
               <input type="text"
                 className='w-full'
                 value={name}
-                onChange={(e)=>setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 placeholder='Your name'
               />
             </div>
@@ -76,30 +94,33 @@ const[massege,setMassege]=useState('');
               <input type="email"
                 className='w-full'
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder='Your Email' />
             </div>
             <div>
               <input type="number"
                 className='w-full'
                 value={phone}
-                onChange={(e)=>setPhone(e.target.value)}
+                onChange={(e) => setPhone(e.target.value)}
                 placeholder='Your Phone' />
             </div>
             <div>
               <input type="text"
                 className='w-full'
                 value={subject}
-                onChange={(e)=>setSubject(e.target.value)}
+                onChange={(e) => setSubject(e.target.value)}
                 placeholder='Your Subject' />
             </div>
             <div>
               <textarea name="" cols="60" rows="5"
                 className='w-full dark:bg-bdark p-3 rounded-md border dark:border-gray-600'
                 value={massege}
-                onChange={(e)=>setMassege(e.target.value)}
+                onChange={(e) => setMassege(e.target.value)}
                 placeholder='Enter Message' />
             </div>
+          </div>
+          <div className='lg:hidden text-lg'>        
+             <center> <h1 className='text-green'> {isSend}</h1><p className='text-red-500'>{error}</p></center>
           </div>
           <button className=' py-3 my-5 lg:w-1/3 w-full rounded-md border bg-orange-400 dark:border-gray-600 hover:bg-green'>SUBMIT NOW</button>
         </form>

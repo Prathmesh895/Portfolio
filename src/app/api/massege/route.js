@@ -31,10 +31,10 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
     try {
-        const { email, name, phone, subject, message } = await req.json();
+        const { email, name, phone, subject, massege} = await req.json();
         await ConnectDB();
 
-        await Sender.create({ email, name, phone, subject, message });
+        await Sender.create({ email, name, phone, subject, massege});
         return NextResponse.json({ message: "Message sent." }, { status: 201 });
     } catch (error) {
         console.error("Error sending message:", error);
