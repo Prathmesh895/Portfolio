@@ -22,7 +22,7 @@ function Page() {
         }
       });
       const data = await res.json();
-      setUserData(data.user); // Set the fetched user data to state
+      setUserData(data.users); // Set the fetched user data to state
     } catch (error) {
       console.error('Error fetching data:', error);
     }

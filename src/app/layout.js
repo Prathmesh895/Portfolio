@@ -5,6 +5,7 @@ import Navbar from '@/components/navbar'
 import { Providers } from "./Providers";
 import Footer from '@/components/footer'
 import About from "./about/page";
+// import type { Metadata } from "next";
 
 
 // const inter = Inter({ subsets: ["latin"] });

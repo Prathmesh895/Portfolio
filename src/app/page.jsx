@@ -9,6 +9,7 @@ import { FaTwitter } from "react-icons/fa";
 import Link from 'next/link';
 import { TypeAnimation } from 'react-type-animation';
 import Skills from '@/components/skills'
+import Gif1 from '/public/2RNb.gif'
 
 
 function homepage() {
@@ -17,6 +18,7 @@ function homepage() {
   };
   return (
     <>
+      {/* <Image className='bg-cover w-full -z-10 absolute top-0 h-screen' src={Gif1} /> */}
       <section className='lg:flex lg:mx-36 mx-6 lg:items-center mt-40'>
         <div className='lg:w-1/2 space-y-14 mt-40 lg:mt-0  flex flex-col items-center  lg:items-start   '>
           <h1 className='text-orange-600 text-2xl animate-slideRight'>HELLO I'M</h1>
@@ -25,22 +27,22 @@ function homepage() {
             <span className='animate-slideRight'>GATADE</span>
           </p>
           <div className='text-orange-600 text-sm'>
-          <TypeAnimation
-            sequence={[
-              // Same substring at the start will only be typed once, initially
-              'A PASSIONATE FULL-STACK WEB DEVELOPER',
-              1000,
-              'A PASSIONATE NEXTJS DEVELOPER',
-              1000,
-              'A PASSIONATE REACTJS DEVELOPER',
-              1000,
-              'A PASSIONATE FRONT-END WEB DEVELOPER',
-              1000,
-            ]}
-            speed={50}
-            style={{ fontSize: '2em' }}
-            repeat={Infinity}
-          />
+            <TypeAnimation
+              sequence={[
+                // Same substring at the start will only be typed once, initially
+                'A PASSIONATE FULL-STACK WEB DEVELOPER',
+                1000,
+                'A PASSIONATE NEXTJS DEVELOPER',
+                1000,
+                'A PASSIONATE REACTJS DEVELOPER',
+                1000,
+                'A PASSIONATE FRONT-END WEB DEVELOPER',
+                1000,
+              ]}
+              speed={50}
+              style={{ fontSize: '2em' }}
+              repeat={Infinity}
+            />
           </div>
           <button className=' text-lg text-white p-2 bg-orange-600'>SAY HELLO</button>
         </div>
@@ -83,7 +85,7 @@ function homepage() {
           </div>
         </div>
       </section>
-      <Skills/>
+      <Skills />
     </>
 
   )

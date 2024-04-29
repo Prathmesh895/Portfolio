@@ -4,7 +4,9 @@ import { useState } from 'react'
 import bcrypt from 'bcryptjs'
 import { useRouter } from 'next/navigation';
 import { signIn } from "next-auth/react";
-function page() {
+
+
+export default function page() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState("");
   const[error,setError]=useState('')
@@ -34,6 +36,7 @@ function page() {
 
   return (
     <>
+    <title>Login Page for Prathmesh</title>
       <section className=' flex items-center justify-center flex-col lg:m-44 my-44 lg:my-0'>
         <div className='lg:w-1/3 bg-black rounded-lg'>
           <div>
@@ -65,4 +68,4 @@ function page() {
   )
 }
 
-export default page
+
