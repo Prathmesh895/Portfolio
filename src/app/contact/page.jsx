@@ -12,13 +12,22 @@ export default function page() {
   const [subject, setSubject] = useState('');
   const [massege, setMassege] = useState('');
   const [isSend, setIssend] = useState('');
-  const [error, setError] = useState('');
-
+  const [errors, setErrors] = useState({
+    name: '', email: '', phone: '',
+    subject: '', massege: '', isSend: '',
+  })
   const handleOnsubmit = async (e) => {
     e.preventDefault();
-    if (!name || !email || !phone || !subject || !massege) {
-      setError("Please Enter All fields")
-      return;
+
+    let newError = {};
+    if (!name) newError.name = 'Please Enter the Name';
+    if (!email) newError.email = 'Please Enter the Email';
+    if (!phone) newError.phone = 'Please Enter the Phone';
+    if (!subject) newError.subject = 'Please Enter the Subject';
+    if (!massege) newError.massege = 'Please Enter the Massege';
+    if (Object.keys(newError).length > 0) {
+      setErrors(newError);
+      setErrors(prev => ({ ...prev, general: 'Enter All fields' }))
     }
 
     // console.log(name,email,phone,subject,massege);
@@ -38,18 +47,22 @@ export default function page() {
       });
       if (res.ok) {
         setIssend("Message send Successfully");
+        setTimeout(() => {
+          setIssend("");
+        }, 4000);
         setEmail('');
         setMassege('');
         setPhone('');
         setSubject('');
         setName("");
+        setErrors('');
         // console.log("messege send")
       } else {
-        setError("Unable to send Message")
+        setErrors(prev => ({ ...prev, general: 'Unable to send Message' }));
 
       }
     } catch (error) {
-      // console.log("Unable to send Masseage")
+      setErrors(prev => ({ ...prev, general: 'Unable to send Message' }));
     }
 
   }
@@ -62,7 +75,10 @@ export default function page() {
       <section className='flex flex-col  items-center lg:mt-36 mt-10 mb-10 space-y-6'>
         <h1 className='text-lg text-orange-400'>C O N T A C T &nbsp; M E </h1>
         <h1 className='lg:text-6xl text-2xl'>LET’S START A NEW PROJECT</h1>
-       <div className='lg:block hidden'> <h1 className='text-green text-lg'> {isSend }</h1> <p className='text-red-500 text-lg'>{error}</p></div>
+        <div className='lg:block hidden'>
+          <h1 className='text-green text-lg'> {isSend}</h1>
+          <p className='text-red-500 text-lg animate-bounce'>{errors.general}</p>
+        </div>
       </section>
       <section className='lg:mx-36 m-5 lg:flex'>
         <div className='w-1/3 lg:block hidden'>
@@ -89,6 +105,7 @@ export default function page() {
                 onChange={(e) => setName(e.target.value)}
                 placeholder='Your name'
               />
+              <p className='text-red-400 text-sm'>{errors.name}</p>
             </div>
             <div>
               <input type="email"
@@ -96,6 +113,7 @@ export default function page() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder='Your Email' />
+              <p className='text-red-400 text-sm'>{errors.email}</p>
             </div>
             <div>
               <input type="number"
@@ -103,6 +121,7 @@ export default function page() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder='Your Phone' />
+              <p className='text-red-400 text-sm'>{errors.phone}</p>
             </div>
             <div>
               <input type="text"
@@ -110,6 +129,7 @@ export default function page() {
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 placeholder='Your Subject' />
+              <p className='text-red-400 text-sm'>{errors.subject}</p>
             </div>
             <div>
               <textarea name="" cols="60" rows="5"
@@ -117,10 +137,14 @@ export default function page() {
                 value={massege}
                 onChange={(e) => setMassege(e.target.value)}
                 placeholder='Enter Message' />
+              <p className='text-red-400 text-sm'>{errors.massege}</p>
             </div>
           </div>
-          <div className='lg:hidden text-lg'>        
-             <center> <h1 className='text-green'> {isSend}</h1><p className='text-red-500'>{error}</p></center>
+          <div className='lg:hidden text-lg'>
+            <center>
+              <h1 className='text-green'>{isSend}</h1>
+              <p className='text-red-600 mt-5 animate-bounce'>{errors.general}</p>
+            </center>
           </div>
           <button className=' py-3 my-5 lg:w-1/3 w-full rounded-md border bg-orange-400 dark:border-gray-600 hover:bg-green'>SUBMIT NOW</button>
         </form>

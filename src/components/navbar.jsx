@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState,useRef,useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTheme } from 'next-themes';
@@ -11,15 +11,27 @@ import { BsInstagram } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
 
 function Navbar() {
-    const [open, setOpen] = useState('');
+    const [open, setOpen] = useState(false);
     const { theme } = useTheme();
+
+    const Navref =useRef();
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+           if (Navref.current && !Navref.current.contains(e.target)) {
+            setOpen(false);
+      }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
   
     const handleDownload = () => {
         window.open('/Prathmesh-Gatade.pdf', '_blank');
       };
   // Determine the z-index value based on the theme
   const zIndex = theme === 'dark' ? 10 : 50;
-
 
     const handleOnchange = () => {
         setOpen(!open)
@@ -42,7 +54,7 @@ function Navbar() {
                             <Link href={link.href} >{link.title}</Link>
                         </p>
                     ))}
-                    <h1 className=' py-1 px-4 rounded-3xl dark:hover:bg-gray-700 '><Link href='/hire_me'>Hire Me</Link></h1>
+                    {/* <h1 className=' py-1 px-4 rounded-3xl dark:hover:bg-gray-700 '><Link href='/hire_me'>Hire Me</Link></h1> */}
                     <button onClick={handleDownload} className=' py-2 px-4 rounded border-orange-600 border'>DOWNLOAD CV</button>
                     <h1><Theme /></h1>
                 </div>
@@ -50,18 +62,18 @@ function Navbar() {
                     <h1 ><Theme /></h1>
                 </div>
                 {/* Toggle menu for mobile screen */}
-                <div className='text-lg lg:hidden relative z-20 h-12 flex'>
+                <div ref={Navref} className='text-lg lg:hidden relative z-20 h-12 flex'>
                     <button onClick={handleOnchange}>
                         <RiMenu3Fill size={27} />
                     </button>
-                    <div className={open ? "fixed left-0 top-0 w-[90%] h-screen z-50 dark:bg-fdark bg-white ease-in duration-500" :
+                    <div  className={open ? "fixed left-0 top-0 w-[90%] h-screen z-50 dark:bg-fdark bg-white ease-in duration-500" :
                         "fixed left-[-110%] top-0 p-6 bg-slate-500"}>
                         <div className='p-3 justify-end flex ' onClick={handleOnchange}>
                             <AiOutlineClose className='border bg-white dark:bg-bdark p-2 rounded-full' size={40} />
                         </div>
                         <div className='flex flex-col px-10 space-y-3'>
                             {Navcontent.map((link, index) => (
-                                <Link href={link.href} key={index}>{link.title}</Link>
+                                <Link href={link.href} key={index} onClick={handleOnchange}>{link.title}</Link>
                             ))}
                             <h1 className=''>
                                 Follow me
