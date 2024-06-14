@@ -68,7 +68,4 @@ export default function page() {
   )
 }
 
-export const metadata = {
-  title: "Login",
-};
 
