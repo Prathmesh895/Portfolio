@@ -21,7 +21,9 @@ module.exports = {
        "blue":'#007bff',
        "gold":"#ffd700",
        "pink1":"#c30cfa",
-       "B7B7B7":"#B7B7B7"
+       "B7B7B7":"#B7B7B7",
+       "#696969":"#696969"
+
     
       },
       animation: {

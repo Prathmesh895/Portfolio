@@ -11,7 +11,7 @@ import { FaTwitter } from "react-icons/fa";
 function page() {
     return (
         <>
-            <div className='dark:bg-gray-900 bg-fdark1 text-white h-80 flex flex-col items-center space-y-5 pt-20'>
+            <div className='dark:bg-black bg-fdark1 text-white h-72 border-t border-gray-900 flex flex-col items-center space-y-5 pt-20'>
                 {/* <Image src={PGLOgo} width={150} height={150} /> */}
                 <h1 className='lg:text-4xl text-3xl'>Prathmesh Gatade</h1>
                 <div className='text-lg flex flex-col lg:flex-row text-gray-400 lg:space-x-7 items-center'>
@@ -20,7 +20,7 @@ function page() {
                     <h1 className='flex items-center'><FaLocationDot className='mx-2' />Pune,Maharashtra</h1>
                 </div>
             </div>
-            <div className='bg-black lg:h-16 dark:text-gray-400 text-white lg:px-36 flex items-center flex-col lg:flex-row justify-between p-4'>
+            <div className='bg-black lg:h-16 border-t border-gray-900 dark:text-gray-400 text-white lg:px-36 flex items-center flex-col lg:flex-row justify-between p-4'>
                 <h1>&copy; 2024 Portfolio.All Rights Reserved | Design by
                     <span className='text-green'> Prathmesh Gatade</span>
                 </h1>

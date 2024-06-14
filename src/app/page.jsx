@@ -1,5 +1,6 @@
 "use client"
-import React from 'react'
+import AOSWrapper from '@/components/aoswrapper';
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Photo1 from '/public/education.avif'
 import { AiOutlineLinkedin } from "react-icons/ai";
@@ -9,51 +10,100 @@ import { FaTwitter } from "react-icons/fa";
 import Link from 'next/link';
 import { TypeAnimation } from 'react-type-animation';
 import Skills from '@/components/skills'
-import Gif1 from '/public/2RNb.gif'
 
-
-function homepage() {
+function page() {
   const handleDownload = () => {
     window.open('/Prathmesh-Gatade.pdf', '_blank');
   };
+  const [hello, setHello] = useState('')
+  const handleOnHello = () => {
+    setHello(true);
+  };
+
+  useEffect(() => {
+    if (hello) {
+      const timer = setTimeout(() => {
+        setHello(false);
+      }, 3000); // 3000 ms = 3 seconds
+      return () => clearTimeout(timer); // Cleanup timer if component unmounts or hello state changes
+    }
+  }, [hello]);
   return (
     <>
-      {/* <Image className='bg-cover w-full -z-10 absolute top-0 h-screen' src={Gif1} /> */}
-      <section className='lg:flex lg:mx-36 mx-6 lg:items-center mt-40'>
-        <div className='lg:w-1/2 space-y-14 mt-40 lg:mt-0  flex flex-col items-center  lg:items-start   '>
-          <h1 className='text-orange-600 text-2xl animate-slideRight'>HELLO I'M</h1>
-          <p className='lg:text-8xl text-5xl flex flex-col items-center lg:items-start lg:space-y-3 '>
-            <span className='animate-slideLeft'>PRATHMESH</span>
-            <span className='animate-slideRight'>GATADE</span>
-          </p>
-          <div className='text-orange-600 text-sm'>
-            <TypeAnimation
-              sequence={[
-                // Same substring at the start will only be typed once, initially
-                'A PASSIONATE FULL-STACK WEB DEVELOPER',
-                1000,
-                'A PASSIONATE NEXTJS DEVELOPER',
-                1000,
-                'A PASSIONATE REACTJS DEVELOPER',
-                1000,
-                'A PASSIONATE FRONT-END WEB DEVELOPER',
-                1000,
-              ]}
-              speed={50}
-              style={{ fontSize: '2em' }}
-              repeat={Infinity}
-            />
+      <AOSWrapper>
+        <section className=' lg:m-44  mt-20' data-aos="fade-up">
+          <div className="grid grid-cols-12">
+            <div className="col-span-1 col-10 border-dashed border-b dark:border-gray-800 border-gray-200"></div>
+            <div className="col-span-10 col-80 border-dashed border-b border-l dark:border-gray-800 border-gray-200">
+              <h1 className='text-orange-600 text-2xl p-4' data-aos="fade-up">HELLO I'M</h1>
+            </div>
+            <div className="col-span-1 col-10 border-dashed border-b border-l dark:border-gray-800 border-gray-200"></div>
+            {/* 1 */}
+            <div className="col-span-1 col-10 border-dashed border-b dark:border-gray-800 border-gray-200"></div>
+            <div className="col-span-10 col-80 border-dashed border-b border-l dark:border-gray-800 border-gray-200">
+              <h1 className='lg:text-8xl text-5xl text-center lg:text-start p-4' data-aos="fade-up">Prathmesh Gatade</h1>
+            </div>
+            <div className="col-span-1 col-10 border-dashed border-b border-l dark:border-gray-800 border-gray-200"></div>
+            {/* 2 */}
+            <div className="col-span-1 col-10 border-dashed border-b dark:border-gray-800 border-gray-200"></div>
+            <div className="lg:text-start text-center col-span-10 col-80 p-4 border-dashed border-b border-l lg:h-14 h-24 dark:border-gray-800 border-gray-200 text-orange-600 text-sm" data-aos="fade-up">
+              <TypeAnimation
+                sequence={[
+                  // Same substring at the start will only be typed once, initially
+                  'A PASSIONATE FULL-STACK WEB DEVELOPER',
+                  1000,
+                  'A PASSIONATE NEXTJS DEVELOPER',
+                  1000,
+                  'A PASSIONATE REACTJS DEVELOPER',
+                  1000,
+                  'A PASSIONATE FRONT-END WEB DEVELOPER',
+                  1000,
+                ]}
+                speed={50}
+                style={{ fontSize: '2em' }}
+                repeat={Infinity}
+              />
+            </div>
+            <div className="col-span-1 col-10 border-dashed border-b border-l dark:border-gray-800 border-gray-200"></div>
+            {/* 3 */}
+            <div className="col-span-1 col-10 border-dashed border-b dark:border-gray-800 border-gray-200"></div>
+            <div data-aos="fade-up" className="col-span-10 col-80 border-dashed border-b  border-l dark:border-gray-800 border-gray-200 text-xl p-4 text-center lg:text-start">
+              I'm a web developer with experiance for over 1 year. <br />
+              experence is to create ans website design,Frontend design ,backend design and many more...
+            </div>
+            <div className="col-span-1 col-10 border-dashed border-b border-l dark:border-gray-800 border-gray-200"></div>
+            {/* 4 */}
+            <div className="col-span-1 col-10 border-dashed border-b dark:border-gray-800 border-gray-200"></div>
+            <div className="col-span-10 col-80 border-dashed border-b  border-l dark:border-gray-800 border-gray-200 text-xl p-4">
+            <div data-aos="fade-up" className='flex space-x-4 items-center lg:justify-normal justify-between mt-2'>
+                <h1 className='text-xl lg:block hidden'>Follow me on</h1>
+                <Link href='https://www.linkedin.com/in/prathmesh-guruling-gatade/' target='_blank' className='dark:bg-gray-800 p-2 rounded-full'>  <AiOutlineLinkedin size={22} /> </Link>
+                <Link href='https://github.com/Prathmesh895' target='_blank' className='dark:bg-gray-800 p-2 rounded-full'><BsGithub size={19} /></Link>
+                <Link href='https://www.instagram.com/mi_prathmeshgatade/' target='_blank' className='dark:bg-gray-800 p-2 rounded-full'> <BsInstagram size={18} /></Link>
+                <Link href='https://www.instagram.com/mi_prathmeshgatade/' target='_blank' className='dark:bg-gray-800 p-2 rounded-full'> <FaTwitter size={22} /></Link>
+              </div>
+            </div>
+            <div className="col-span-1 col-10 border-dashed border-b border-l dark:border-gray-800 border-gray-200"></div>
+            {/* 4 */}
+            <div className="col-span-1 col-10 border-dashed dark:border-gray-800 border-gray-200"></div>
+            <div className="col-span-10 col-80 border-dashed  border-l dark:border-gray-800 border-gray-200 h-14 p-4" data-aos="fade-up">
+              <button onClick={handleOnHello} className=' text-lg text-white p-2 bg-orange-600' >SAY HELLO</button>
+              
+              {
+                hello &&
+                <>
+                  <div className='w-80 h-60 text-3xl lg:left-[40%] backdrop-blur-xl absolute top-1/3 flex items-center justify-center text-green'>
+                    👋  Hello !
+                  </div>
+                </>
+              }
+            </div>
+            <div className="col-span-1 col-10 border-dashed border-l dark:border-gray-800 border-gray-200"></div>
           </div>
-          <button className=' text-lg text-white p-2 bg-orange-600'>SAY HELLO</button>
-        </div>
-        {/* PHOTO SECTION */}
-        {/* <div className='lg:w-1/2 rounded-full'>
-        <Image className='rounded-full' src={PROF}/>
-      </div> */}
-      </section>
-      <section className='lg:flex lg:mb-20 lg:mx-36 mt-40'>
-        <div className='lg:w-1/3'><Image className='' src={Photo1} alt='banner' /></div>
-        <div className='flex flex-col items-center  space-y-5 lg:ml-20 m-5 lg:m-0 lg:w-2/3'>
+        </section>
+
+        {/* section 2  */}
+        <div className='flex flex-col items-center  space-y-5 m-5 lg:mx-44 ' data-aos="fade-up">
           <h1 className='text-xl text-green'>MY BIOGRAPHY</h1>
           <center><h1 className='lg:text-5xl text-2xl'>A Full stack Web developer Based in Pune, Maharashtra</h1>
             <p className='text-lg dark:text-gray-400 mt-5'>Experienced full-stack web developer proficient in React.js, JavaScript, HTML, CSS, Git,
@@ -63,15 +113,14 @@ function homepage() {
               and staying updated with the latest trends in web development.
             </p>
           </center>
-          <div className='lg:grid grid-cols-2 gap-6 lg:text-xl font-semibold'>
+          <div className='lg:grid grid-cols-2 gap-6 lg:text-xl font-semibold' data-aos="fade-up">
             <div>Name : Prathmesh Gatade</div>
             <div>From : Pune, Maharashtra</div>
             <div>Email : prathmeshgatade895@gmail.com</div>
             <div>Contact : 8956146149</div>
           </div>
 
-          <div>
-
+          <div className='flex justify-center flex-col' data-aos="fade-up">
             <div className='flex space-x-4 items-center mt-2'>
               <h1 className='text-xl'>Follow me on</h1>
               <Link href='https://www.linkedin.com/in/prathmesh-guruling-gatade/' target='_blank' className='dark:bg-gray-800 p-2 rounded-full'>  <AiOutlineLinkedin size={22} /> </Link>
@@ -84,11 +133,10 @@ function homepage() {
             </button>
           </div>
         </div>
-      </section>
-      <Skills />
+        <Skills />
+      </AOSWrapper>
     </>
-
   )
 }
 
-export default homepage
+export default page
