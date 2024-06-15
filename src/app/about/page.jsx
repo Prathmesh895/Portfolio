@@ -11,15 +11,15 @@ function About() {
     <>
       <AOSWrapper>
         <section className='mt-20 lg:mt-0 '>
-          <div className='dark:bg-fdark1 lg:h-96 h-52 flex items-center '>
+          <div className=' lg:h-96 h-52 flex items-center '>
             <h1 className='text-6xl lg:pl-36 lg:w-1/2  m-auto lg:m-0' data-aos="fade-up">ABOUT ME</h1>
           </div>
           <p className='bg-orange-400 h-0.5 w-full'></p>
 
           {/* section 1  */}
-          <div className='lg:relative '>
-            <Image src={BG} className=' -z-10 absolute bg-cover' />
-            <div className='lg:m-auto lg:w-[70%] relative w-full lg:top-44 dark:bg-fdark bg-white border-gray-600 border-b lg:h-h flex flex-col items-center space-y-10 justify-center p-5 lg:px-24'>
+          <div className='lg:relative  '>
+            <Image src={BG} className=' -z-10 absolute bg-cover' alt='cover' loading="lazy" />
+            <div className='lg:m-auto lg:w-[70%] relative w-full lg:top-44 dark:bg-black bg-white  border-gray-600 border-b lg:h-h flex flex-col items-center space-y-10 justify-center p-5 lg:px-24'>
               <h1 className='text-green-400 text-xl text-green mt-5 ' data-aos="fade-up">ABOUT MYSELF</h1>
               <center>
                 <p className='lg:text-2xl ' data-aos="fade-up">
@@ -39,7 +39,7 @@ function About() {
           </div>
           {/* section 3 */}
           <main className=' lg:mt-80 '>
-            <div className='dark:bg-fdark1 h-60 w-[100%] lg:px-36 px-14 flex items-center' data-aos="fade-up">
+            <div className=' h-60 w-[100%] lg:px-36 px-14 flex items-center' data-aos="fade-up">
               <h1 className='text-6xl '>Education</h1>
             </div>
             <p className='bg-orange-400 h-0.5 w-full'></p>
@@ -85,7 +85,7 @@ function About() {
             </div>
 
             {/* Experiance  */}
-            <div className='dark:bg-fdark1 h-56 w-[100%] lg:px-36 flex items-center' data-aos="fade-up">
+            <div className=' h-56 w-[100%] lg:px-36 flex items-center' data-aos="fade-up">
               <h1 className='text-6xl lg:ml-0 ml-12 animate-slideLeft'>Experiance</h1>
             </div>
             <p className='bg-orange-400 h-0.5 w-full'></p>

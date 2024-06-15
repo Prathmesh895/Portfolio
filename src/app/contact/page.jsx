@@ -5,11 +5,12 @@ import { FaLocationDot } from "react-icons/fa6";
 import { BsTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import AOSWrapper from '@/components/aoswrapper';
+import Svg from '/public/undraw_join_re_w1lh.svg'
 
 
 
 export default function page() {
-  
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -73,7 +74,7 @@ export default function page() {
   return (
     <>
       <AOSWrapper>
-        <div className='dark:bg-fdark1 lg:h-96 h-52 flex items-center lg:mt-0 mt-20' data-aos="fade-up">
+        <div className=' lg:h-96 h-52 flex items-center lg:mt-0 mt-20' data-aos="fade-up">
           <h1 className='text-6xl lg:pl-36 lg:w-1/2 m-auto lg:m-0'>CONTACT</h1>
         </div>
         <p className='bg-orange-400 h-0.5 w-full'></p>
@@ -81,8 +82,24 @@ export default function page() {
           <h1 className='text-lg text-orange-400'>C O N T A C T &nbsp; M E </h1>
           <h1 className='lg:text-6xl text-2xl'>LET’S START A NEW PROJECT</h1>
           <div className='lg:block hidden'>
-            <h1 className='text-green text-lg'> {isSend}</h1>
-            <p className='text-red-500 text-lg animate-bounce'>{errors.general}</p>
+            <h1 className='text-green text-lg'>
+              {isSend &&
+              <>
+                <img src='/undraw_join_re_w1lh.svg' alt="svg" width={100} height={100} />
+                {isSend}
+              </>
+              
+              }
+            </h1>
+            <p className='text-red-500 text-lg animate-bounce'>
+              {errors.general  && 
+              <>
+              <img src="/error.svg" alt="error.svg" width={100} height={100}/>
+              {errors.general}
+              </>
+              }
+
+            </p>
           </div>
         </section>
         <section className='lg:mx-36 m-5 lg:flex' data-aos="fade-up">
@@ -147,13 +164,17 @@ export default function page() {
             </div>
             <div className='lg:hidden text-lg'>
               <center>
-                <h1 className='text-green'>{isSend}</h1>
+                <h1 className='text-green'>
+                  {isSend &&
+                    <img src='/undraw_join_re_w1lh.svg' alt="svg" width={100} height={100} />
+                  }
+
+                </h1>
                 <p className='text-red-600 mt-5 animate-bounce'>{errors.general}</p>
               </center>
             </div>
             <button className=' py-3 my-5 lg:w-1/3 w-full rounded-md border bg-orange-400 dark:border-gray-600 hover:bg-green'>SUBMIT NOW</button>
           </form>
-
         </section>
       </AOSWrapper>
     </>

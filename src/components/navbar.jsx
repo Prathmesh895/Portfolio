@@ -39,77 +39,21 @@ function Navbar() {
     }
 
     const Navcontent = [
-        { title: 'HOME', href: '/' },
-        { title: 'ABOUT', href: '/about' },
-        { title: 'PORTFOLIO', href: '/portfolio' },
-        { title: 'CONTACT', href: '/contact' },
+        { title: 'Home', href: '/' },
+        { title: 'About', href: '/about' },
+        { title: 'Portfolio', href: '/portfolio' },
+        { title: 'Contact', href: '/contact' },
     ]
     return (
-        // <section className={`fixed top-0 left-0 w-full   z-${zIndex}`}>
-        //     <nav className='flex justify-between px-6 lg:px-36 py-2 dark:bg-black  border-b dark:border-gray-700 font-semibold  items-center w-full'>
-        //         <div className=' lg:flex space-x-10  text-lg items-center hidden'>
-        //             <div className='text-2xl'>Prathmesh Gatade</div>
-        //             {Navcontent.map((link, index) => (
-        //                 <p key={index} className='py-1 px-4 rounded-3xl dark:hover:text-white dark:text-gray-500'>
-        //                     <Link href={link.href} >
-        //                         <span className={`${pathname === link.href ? 'text-white' : ''}`}>{link.title}</span>
-        //                     </Link>
-        //                 </p>
-        //             ))}
-        //             {/* <h1 className=' py-1 px-4 rounded-3xl dark:hover:bg-gray-700 '><Link href='/hire_me'>Hire Me</Link></h1> */}
-        //             <button onClick={handleDownload} className=' py-2 px-4 rounded border-orange-600 border'>DOWNLOAD CV</button>
-        //             <h1><Theme /></h1>
-        //         </div>
-
-        //         {/* Toggle menu for mobile screen */}
-        //         <div ref={Navref} className='text-lg lg:hidden relative z-20 h-12 '>
-        //             <div className='flex items-center justify-between'>
-        //                 <div className='text-2xl'>Prathmesh Gatade</div>
-        //                 <div className='flex items-center space-x-3'>
-        //                     <h1 className='text-lg'><Theme /></h1>
-
-        //                     <button onClick={handleOnchange}>
-        //                         <RiMenu3Fill size={27} />
-        //                     </button>
-        //                 </div>
-        //             </div>
-        //             <div className={open ? "fixed left-0 top-0 w-[90%] h-screen z-50  ease-in duration-500" :
-        //                 "fixed left-[-110%] top-0 p-6 bg-slate-500"}>
-        //                 <div className='p-3 justify-end flex ' onClick={handleOnchange}>
-        //                     <AiOutlineClose className='border bg-white dark:bg-bdark p-2 rounded-full' size={40} />
-        //                 </div>
-        //                 <div className='flex flex-col px-10 space-y-3'>
-        //                     {Navcontent.map((link, index) => (
-        //                         <Link href={link.href} key={index} onClick={handleOnchange}>{link.title}</Link>
-        //                     ))}
-        //                     <h1 className=''>
-        //                         Follow me
-        //                     </h1>
-        //                     <div className='flex space-x-4 items-center'>
-        //                         <Link href='https://www.linkedin.com/in/prathmesh-guruling-gatade/' target='_blank'>  <AiOutlineLinkedin size={32} /> </Link>
-        //                         <Link href='https://github.com/Prathmesh895' target='_blank'><BsGithub size={29} /></Link>
-        //                         <Link href='https://www.instagram.com/mi_prathmeshgatade/' target='_blank'> <BsInstagram size={28} /></Link>
-        //                     </div>
-        //                 </div>
-
-        //             </div>
-        //         </div>
-
-        //     </nav>
-
-
-        // </section>
-
-
         <section className={`fixed top-0 left-0 w-full   z-${zIndex}`}>
             {/* nav for lg view  */}
-            <nav className=' hidden lg:flex justify-between px-6 lg:px-36 py-2 dark:bg-black  border-b dark:border-gray-700 font-semibold  items-center w-full'>
+            <nav className=' hidden lg:flex justify-between px-6 lg:px-36 py-2 dark:bg-black  border-b dark:border-stone-900   items-center w-full'>
                 <div className=' lg:flex space-x-5  text-lg items-center'>
-                    <div className='text-2xl'>Prathmesh Gatade</div>
+                    <Link href='/'><div className='text-2xl font-semibold'>Prathmesh Gatade</div></Link>
                     {Navcontent.map((link, index) => (
-                        <p key={index} className='py-1 px-4 rounded-3xl dark:hover:text-white dark:text-gray-500'>
+                        <p key={index} className='py-1 px-4 rounded-3xl text-sm font-sans dark:hover:text-white dark:text-stone-400'>
                             <Link href={link.href} >
-                                <span className={`${pathname === link.href ? 'text-white' : ''}`}>{link.title}</span>
+                                <span className={`${pathname === link.href ? 'text-orange-600' : ''}`}>{link.title}</span>
                             </Link>
                         </p>
                     ))}
