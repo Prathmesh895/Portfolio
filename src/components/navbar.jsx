@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useTheme } from 'next-themes';
 import Theme from '@/components/theme'
 import { RiMenu3Fill } from "react-icons/ri";
@@ -47,7 +46,7 @@ function Navbar() {
     return (
         <section className={`fixed top-0 left-0 w-full   z-${zIndex}`}>
             {/* nav for lg view  */}
-            <nav className=' hidden lg:flex justify-between px-6 lg:px-36 py-2 dark:bg-black  border-b dark:border-stone-900   items-center w-full'>
+            <nav className=' hidden lg:flex justify-between px-6 lg:px-36 py-2 dark:bg-black  bg-white border-b dark:border-stone-900   items-center w-full'>
                 <div className=' lg:flex space-x-5  text-lg items-center'>
                     <Link href='/'><div className='text-2xl font-semibold'>Prathmesh Gatade</div></Link>
                     {Navcontent.map((link, index) => (
@@ -65,8 +64,8 @@ function Navbar() {
                     <h1><Theme /></h1>
                 </div>
             </nav>
-
-            <nav className='border-b dark:border-gray-700 dark:bg-black'>
+ {/* nav for small screen  */}
+            <nav className='border-b dark:border-gray-700 bg-white dark:bg-black'>
                 <div ref={Navref} className='text-lg lg:hidden relative z-20  '>
                     <div className='flex items-center justify-between px-6 py-9 h-12'>
                         <div className='text-2xl'>Prathmesh Gatade</div>

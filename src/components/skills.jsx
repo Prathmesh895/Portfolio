@@ -39,7 +39,7 @@ function Skills() {
             <center className='lg:text-4xl mt-20' data-aos="fade-up">SKILLS</center>
             <section className='grid lg:grid-cols-4 grid-cols-2 lg:gap-10 gap-4 lg:m-10 m-5' data-aos="fade-up">
                 {skillsData.map((item, index) => (
-                    <div key={index} className='dark:bg-fdark1 p-5 flex hover:dark:bg-slate-700 transition-all duration-300 ease-linear items-center justify-center'>
+                    <div key={index} className='dark:bg-fdark1 p-5 border flex hover:dark:bg-slate-700 transition-all duration-300 ease-linear items-center justify-center'>
                         <item.Icon size={40} className={`hover:${item.animation}  mr-5`} />
                         <span className='lg:text-2xl'>{item.text}</span>
                     </div>
