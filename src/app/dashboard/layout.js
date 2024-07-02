@@ -5,10 +5,10 @@ import { redirect } from 'next/navigation';
 import Sidebar from '@/components/dashboard/sidebar';
 export default async function layout({ children }) {
     const session = await getServerSession(authOptions);
-    // if (!session) {
-    //     redirect('/Login');
-    //     return null; // Ensure that the function returns null after redirection
-    //   }
+    if (!session) {
+        redirect('/Login');
+        return null; // Ensure that the function returns null after redirection
+      }
 
   return (
     <div className='flex lg:flex-row flex-col space-x-5 mt-0'>
