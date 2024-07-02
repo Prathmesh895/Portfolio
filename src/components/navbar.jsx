@@ -9,8 +9,13 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import { BsInstagram } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
 import { usePathname } from 'next/navigation'
+import { useSession } from 'next-auth/react';
+import { signOut } from 'next-auth/react'
+import { useRouter } from 'next/navigation';
 
 function Navbar() {
+    const { data: session, status } = useSession();
+    const router = useRouter();
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
     const { theme } = useTheme();
@@ -36,7 +41,11 @@ function Navbar() {
     const handleOnchange = () => {
         setOpen(!open)
     }
-
+    const handleSignOut = async () => {
+        await signOut();
+        router.push('/');
+        toast.success("Logout Sucessesfully")
+    };
     const Navcontent = [
         { title: 'Home', href: '/' },
         { title: 'About', href: '/about' },
@@ -52,7 +61,7 @@ function Navbar() {
                     {Navcontent.map((link, index) => (
                         <p key={index} className='py-1 px-4 rounded-3xl text-sm font-sans dark:hover:text-white dark:text-stone-400'>
                             <Link href={link.href} >
-                                <span className={`${pathname === link.href ? 'text-orange-600' : ''}`}>{link.title}</span>
+                                <span className={`${pathname === link.href ? 'text-white' : ''}`}>{link.title}</span>
                             </Link>
                         </p>
                     ))}
@@ -61,12 +70,26 @@ function Navbar() {
                 </div>
                 <div className='flex space-x-4 items-center'>
                     <button onClick={handleDownload} className=' py-2 px-4 rounded border-orange-600 border'>DOWNLOAD CV</button>
+                    <ul className='flex space-x-2'>
+                        {status === 'loading' ? (
+                            <li>Loading...</li>
+                        ) : session ? (
+                            <>
+                                <li><Link href={'/dashboard'}>Dashboard</Link></li>
+                                <li><button onClick={handleSignOut} className="font-bold">Log Out</button></li>
+                            </>
+                        ) : (
+                            <>
+                                <li><Link href='/Login'>Login</Link></li>
+                            </>
+                        )}
+                    </ul>
                     <h1><Theme /></h1>
                 </div>
             </nav>
- {/* nav for small screen  */}
-            <nav className='border-b dark:border-gray-700 bg-white dark:bg-black'>
-                <div ref={Navref} className='text-lg lg:hidden relative z-20  '>
+            {/* nav for small screen  */}
+            <nav className='border-b dark:border-gray-700 bg-white dark:bg-black lg:hidden'>
+                <div ref={Navref} className='text-lg  relative z-20  '>
                     <div className='flex items-center justify-between px-6 py-9 h-12'>
                         <div className='text-2xl'>Prathmesh Gatade</div>
                         <div className='flex items-center space-x-3'>
@@ -77,7 +100,7 @@ function Navbar() {
                             </button>
                         </div>
                     </div>
-                    <div className={open ? "fixed left-0 top-0 w-[90%] h-screen z-50  bg-black ease-in duration-500" :
+                    <div className={open ? "fixed left-0 top-0 w-[90%] h-screen z-50  dark:bg-black bg-white ease-in duration-500" :
                         "fixed left-[-110%] top-0 p-6 bg-slate-500"}>
                         <div className='p-3 justify-end flex ' onClick={handleOnchange}>
                             <AiOutlineClose className='border bg-white dark:bg-bdark p-2 rounded-full' size={40} />
@@ -85,8 +108,8 @@ function Navbar() {
                         <div className='flex flex-col px-10 space-y-3'>
                             {Navcontent.map((link, index) => (
                                 <Link href={link.href} key={index} onClick={handleOnchange}>
-                                   <span className={`${pathname === link.href ? 'dark:text-white' : 'dark:text-#696969'}`}>{link.title}</span>
-                                    </Link>
+                                    <span className={`${pathname === link.href ? 'dark:text-white' : 'dark:text-#696969'}`}>{link.title}</span>
+                                </Link>
                             ))}
                             <h1 className='dark:text-#696969'>
                                 Follow me

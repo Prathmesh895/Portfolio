@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import { useState } from 'react'
-import bcrypt from 'bcryptjs'
 import { useRouter } from 'next/navigation';
 import { signIn } from "next-auth/react";
 
@@ -16,11 +15,10 @@ export default function page() {
     e.preventDefault();
 
   
-    const hashedPassword = await bcrypt.hash(password, 10);
     try {
       const res = await signIn("credentials", {
           email,
-          password:hashedPassword,
+          password,
           redirect: false,
       });
 
@@ -37,10 +35,10 @@ export default function page() {
   return (
     <>
     <title>Login Page for Prathmesh</title>
-      <section className=' flex items-center justify-center flex-col lg:m-44 my-44 lg:my-0'>
-        <div className='lg:w-1/3 bg-black rounded-lg'>
+      <section className=' flex items-center justify-center flex-col lg:m-44 my-44 lg:my-0 min-h-96'>
+        <div className='lg:w-1/3 dark:bg-black rounded-lg border'>
           <div>
-            <center><h1 className='text-2xl mt-10'>Hi Welcome</h1></center>
+            <center><h1 className='text-2xl mt-10'>Welcome Prathmesh</h1></center>
           </div>
           <form onSubmit={handleSubmit} className='flex flex-col items-center space-y-5 w-full p-5'>
             <div className='w-full'>
@@ -59,7 +57,7 @@ export default function page() {
                 className='w-full'
               />
             </div>
-            <button >Submit</button>
+            <button type='submit' className='border px-5 py-1'>Submit</button>
           </form>
 
         </div>

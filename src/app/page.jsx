@@ -1,8 +1,6 @@
 "use client"
 import AOSWrapper from '@/components/aoswrapper';
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
-import Photo1 from '/public/education.avif'
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { BsInstagram } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";

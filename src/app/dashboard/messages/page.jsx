@@ -1,23 +1,16 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { useSession, signOut } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
 
 function Page() {
-  const { data: session, status } = useSession();
+
   const [userData, setUserData] = useState([]);
-  const router = useRouter();
+ 
+
+   
 
   useEffect(() => {
-    if (status === 'loading') return;
-    if (!session) router.push('/Login');
-  }, [session, status, router]);
-
-  useEffect(() => {
-    if (session) {
       fetchUser();
-    }
-  }, [session]);
+  }, []);
 
   const fetchUser = async () => {
     try {
@@ -34,13 +27,10 @@ function Page() {
     }
   };
 
-  if (status === 'loading') {
-    return <div>Loading...</div>;
-  }
 
   return (
     <>
-      <div className='mt-36'>
+      <div className=''>
         <center> Message Received</center>
       </div>
       <div className='p-4 overflow-scroll sm:overflow-visible'>
@@ -69,12 +59,6 @@ function Page() {
           </tbody>
         </table>
       </div>
-      <button
-        onClick={() => signOut()}
-        className='bg-red-500 text-white font-bold px-6 py-2 mt-3'
-      >
-        Log Out
-      </button>
     </>
   );
 }
