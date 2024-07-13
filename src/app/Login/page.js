@@ -26,7 +26,7 @@ export default function page() {
           setError("Invalid Credentials");
           return;
         }
-        router.replace("masseges");
+        router.replace("dashboard");
   } catch (error) {
       console.log(error);
   }
