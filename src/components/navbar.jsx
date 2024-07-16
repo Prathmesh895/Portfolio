@@ -61,7 +61,7 @@ function Navbar() {
                     {Navcontent.map((link, index) => (
                         <p key={index} className='py-1 px-4 rounded-3xl text-sm font-sans dark:hover:text-white dark:text-stone-400'>
                             <Link href={link.href} >
-                                <span className={`${pathname === link.href ? 'text-white' : ''}`}>{link.title}</span>
+                                <span className={`${pathname === link.href ? 'dark:text-white font-semibold' : ''}`}>{link.title}</span>
                             </Link>
                         </p>
                     ))}

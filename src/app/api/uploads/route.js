@@ -19,7 +19,7 @@ export const POST = async (req) => {
     // Get the file data
     const buffer = Buffer.from(await file.arrayBuffer());
     const fileName = file.name;
-    const uploadDir = path.join(process.cwd(), 'public', 'uploads');
+    const uploadDir = path.join(process.cwd(), 'public', 'resumes');
     
     // Ensure the upload directory exists
     await fs.mkdir(uploadDir, { recursive: true });
