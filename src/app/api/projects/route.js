@@ -4,35 +4,6 @@ import path from 'path';
 import { ConnectDB } from "@/models/sender";
 import ProjectSchema from "@/lib/projectschema";
 
-// export async function POST(req){
-//     try {
-
-//         await ConnectDB();
-//         const {pname,ptechnologies,pdescription,purl, pgithuburl} = await req.json();
-
-//         await ProjectSchema.create({pname,ptechnologies,pdescription,purl, pgithuburl});
-
-//         return NextResponse.json({message:"Project added successfully"},{status:201}); 
-//     } catch (error) {
-
-//         console.log("Error while adding project");
-//         return NextResponse.json({message:"Error while adding project"},{status:500});
-
-//     }
-// }
-
-export async function GET(req) {
-    try {
-        await ConnectDB();
-        const Project = await ProjectSchema.find({});
-        return NextResponse.json({ message: "Project data fetched successfully", Project }, { status: 201 })
-    } catch (error) {
-        console.log("Error while fetching project");
-        return NextResponse.json({ message: "Error while fetching project" }, { status: 500 });
-    }
-}
-
-
 export async function POST(req) {
     try {
 
@@ -65,5 +36,26 @@ export async function POST(req) {
         console.log("Error while adding project");
         return NextResponse.json({ message: "Error while adding project" }, { status: 500 });
 
+    }
+}
+
+export async function GET(req) {
+    try {
+        await ConnectDB();
+        const Project = await ProjectSchema.find({});
+        return NextResponse.json({ message: "Project data fetched successfully", Project }, { status: 201 })
+    } catch (error) {
+        console.log("Error while fetching project");
+        return NextResponse.json({ message: "Error while fetching project" }, { status: 500 });
+    }
+}
+
+export async function PATCH(){
+    try {
+        await ConnectDB();
+
+    } catch (error) {
+        console.log("Error while Updating project",error.message);
+        return NextResponse.json({ message: "Error while Updating project" }, { status: 500 });
     }
 }

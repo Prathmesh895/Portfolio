@@ -48,8 +48,8 @@ export const POST = async (req) => {
 export async function GET(req){
   try {
     await ConnectDB();
-    const imageData = await PdfS.find({});
-    return NextResponse.json({message:"Data fetched successfully",imageData},{status:200})
+    const resumesData = await PdfS.find({});
+    return NextResponse.json({message:"Data fetched successfully",resumesData},{status:200})
   } catch (error) {
     console.log("Enable to fetch data",error.message);
     return NextResponse.json({ error: 'Failed to fetch file or data' }, { status: 500 });

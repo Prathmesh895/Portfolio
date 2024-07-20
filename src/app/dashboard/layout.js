@@ -11,7 +11,7 @@ export default async function layout({ children }) {
       }
 
   return (
-    <div className='flex lg:flex-row flex-col space-x-5 mt-0'>
+    <div className='flex lg:flex-row flex-col lg:space-x-5 mt-0'>
         <div className='lg:w-[16%]'><Sidebar/></div>
         <div className='lg:w-[80%] lg:border-x dark:border-slate-800 lg:p-5'> {children}</div>
     </div>

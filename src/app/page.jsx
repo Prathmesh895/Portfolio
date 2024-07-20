@@ -73,7 +73,7 @@ function page() {
             {/* 4 */}
             <div className="col-span-1 col-10 border-dashed border-b dark:border-gray-800 border-gray-200"></div>
             <div className="col-span-10 col-80 border-dashed border-b  border-l dark:border-gray-800 border-gray-200 text-xl p-4">
-            <div data-aos="fade-up" className='flex space-x-4 items-center lg:justify-normal justify-between mt-2'>
+              <div data-aos="fade-up" className='flex space-x-4 items-center lg:justify-normal justify-between mt-2'>
                 <h1 className='text-xl lg:block hidden'>Follow me on</h1>
                 <Link href='https://www.linkedin.com/in/prathmesh-guruling-gatade/' target='_blank' className='dark:bg-gray-800 p-2 rounded-full'>  <AiOutlineLinkedin size={22} /> </Link>
                 <Link href='https://github.com/Prathmesh895' target='_blank' className='dark:bg-gray-800 p-2 rounded-full'><BsGithub size={19} /></Link>
@@ -86,7 +86,7 @@ function page() {
             <div className="col-span-1 col-10 border-dashed dark:border-gray-800 border-gray-200"></div>
             <div className="col-span-10 col-80 border-dashed  border-l dark:border-gray-800 border-gray-200 h-14 p-4" data-aos="fade-up">
               <button onClick={handleOnHello} className=' text-lg text-white p-2 bg-orange-600' >SAY HELLO</button>
-              
+
               {
                 hello &&
                 <>
@@ -104,11 +104,13 @@ function page() {
         <div className='flex flex-col items-center  space-y-5 m-5 lg:mx-44 ' data-aos="fade-up">
           <h1 className='text-xl text-green'>MY BIOGRAPHY</h1>
           <center><h1 className='lg:text-5xl text-2xl'>A Full stack Web developer Based in Pune, Maharashtra</h1>
-            <p className='text-lg dark:text-gray-400 mt-5'>Experienced full-stack web developer proficient in React.js, JavaScript, HTML, CSS, Git,
-              GitHub, Next.js, Tailwind CSS, MongoDB, and Postman. Skilled in building responsive web
-              applications, managing databases, and API testing and development. Committed to delivering
-              high-quality solutions
-              and staying updated with the latest trends in web development.
+            <p className='text-lg dark:text-gray-400 mt-5'>
+              Full Stack Web Developer with a proven ability to develop engaging and responsive user interfaces using ReactJS and NextJS.
+              With one year of experience in the MERN stack, proficient in creating fluid experiences and maintaining best practices in
+              HTML, CSS, and Tailwind CSS. Skilled in Git, GitHub, MongoDB, and integrating front-end solutions with back-end
+              support using NodeJS and ExpressJS. Aiming to leverage this expertise to deliver high-quality products and build features that
+              enhance user experience for millions.
+
             </p>
           </center>
           <div className='lg:grid grid-cols-2 gap-6 lg:text-xl font-semibold' data-aos="fade-up">
