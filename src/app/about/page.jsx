@@ -91,8 +91,30 @@ function About() {
             <p className='bg-orange-400 h-0.5 w-full'></p>
             <div className='lg:mx-36 m-5'>
               <div className='lg:ml-56'>
+                {/* Britwise Internship  */}
+                <div className=' border-y dark:border-slate-700 border-gray-200 py-5 lg:my-5' data-aos="fade-up">
+                  <div className='flex justify-between dark:text-slate-200 lg:text-3xl' >
+                    <h1 className=''>Britwise Technology Pvt Ltd</h1>
+                    <h1 className='flex'>Pune,Maharashtra &nbsp;<Link href='' target='_blank'><FiExternalLink /></Link></h1>
+                  </div>
+                  <div className='flex justify-between lg:pt-3 lg:text-xl'>
+                    <h1 className=''>Full stack Web Developer(Nextjs)</h1>
+                    <h1>Jan 2024 - * 2024</h1>
+                  </div>
+                  <ul className='list-disc pl-5'>
+                    <li>Developed responsive user interfaces with ReactJS/NextJS, increasing user engagement by 30%. </li>
+                    <li>Integrated Redux for efficient state management throughout the application, ensuring data consistency and scalability
+                      Designed and refined web interfaces with HTML, CSS, and Tailwind CSS to ensure cross-device compatibility. Utilized
+                      GitHub for version control, enhancing codebase stability
+                    </li>
+                    <li>Optimized backend performance using Node.js, Express.js, and MongoDB, improving data processing efficiency by 20%</li>
+                    <li>Deployed applications with NextJS, achieving 95% uptime. Led code reviews and actively contributed in team meetings,
+                      resulting in significant improvements in code quality and team cohesion.
+                    </li>
+                  </ul>
+                </div>
                 {/* skill academy course internship  */}
-                <div className='border-y dark:border-slate-700 border-gray-200 py-5 lg:my-5' data-aos="fade-up">
+                <div className='border-b dark:border-slate-700 border-gray-200  lg:pt-0 pt-5 pb-5' data-aos="fade-up">
                   <div className='flex justify-between dark:text-slate-200 lg:text-3xl' >
                     <h1 className=''>Skillacademy by Testbook</h1>
                     <h1 className='flex'>remote online&nbsp;<Link href='' target='_blank'><FiExternalLink /></Link></h1>
@@ -101,17 +123,16 @@ function About() {
                     <h1 className=''>6 Months Internship <br />In Full Stack Web Developement</h1>
                     <h1>Feb - July 2022 </h1>
                   </div>
-                </div>
-                {/* Britwise Internship  */}
-                <div className='border-b dark:border-slate-700 border-gray-200  lg:pt-0 pt-5 pb-5' data-aos="fade-up">
-                  <div className='flex justify-between dark:text-slate-200 lg:text-3xl' >
-                    <h1 className=''>Britwise Technology Pvt Ltd</h1>
-                    <h1 className='flex'>Pune,Maharashtra &nbsp;<Link href='' target='_blank'><FiExternalLink /></Link></h1>
-                  </div>
-                  <div className='flex justify-between lg:pt-3 lg:text-xl'>
-                    <h1 className=''>Intern Full stack Web Developer (Nextjs)</h1>
-                    <h1>Jan - July 2024</h1>
-                  </div>
+                  <ul className='list-disc pl-5'>
+                    <li>Enhanced user engagement by 25% through front-end development with HTML, CSS, JavaScript, and ReactJS.</li>
+                    <li>Enhanced server performance by 30% through optimization of back-end code, middleware efficiency improvements, and
+                      advanced techniques using NodeJS and ExpressJS.
+                    </li>
+                    <li>Improved data retrieval efficiency by 20% using MongoDB. Ensured seamless code collaboration with Git and GitHub.</li>
+                    <li>Achieved a 40% reduction in deployment time through architecting and implementing CI/CD pipelines, significantly
+                      enhancing the efficiency and reliability of the release process.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
