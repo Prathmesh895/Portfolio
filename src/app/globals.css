@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Cormorant Garamond", serif;
+  }
+}
+
+@layer base {
+  input {
+    @apply dark:bg-bdark p-3 rounded-md border dark:border-gray-600 hover:border-orange-600;
+  }
+}
