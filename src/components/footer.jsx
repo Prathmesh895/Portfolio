@@ -21,7 +21,7 @@ function page() {
                 </div>
             </div>
             <div className='bg-black lg:h-16 border-t border-gray-900 dark:text-gray-400 text-white lg:px-36 flex items-center flex-col lg:flex-row justify-between p-4'>
-                <h1>&copy; 2024 Portfolio.All Rights Reserved | Design by
+                <h1>&copy; 2025 Portfolio.All Rights Reserved | Design by
                     <span className='text-green'> Prathmesh Gatade</span>
                 </h1>
                 <div className='flex space-x-4 items-center mt-2'>
