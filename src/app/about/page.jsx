@@ -94,7 +94,7 @@ function About() {
                 {/* Britwise Internship  */}
                 <div className=' border-y dark:border-slate-700 border-gray-200 py-5 lg:my-5' data-aos="fade-up">
                   <div className='flex justify-between dark:text-slate-200 lg:text-3xl' >
-                    <h1 className=''>Britwise Technology Pvt Ltd</h1>
+                    <h1 className=''>NWS Soft Consulting Pvt Limited</h1>
                     <h1 className='flex'>Pune,Maharashtra &nbsp;<Link href='' target='_blank'><FiExternalLink /></Link></h1>
                   </div>
                   <div className='flex justify-between lg:pt-3 lg:text-xl'>
