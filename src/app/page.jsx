@@ -11,7 +11,7 @@ import Skills from '@/components/skills'
 
 function page() {
   const handleDownload = () => {
-    window.open('/Prathmesh-Gatade.pdf', '_blank');
+    window.open('/Prathmesh_Gatade_MERN_Resume.pdf', '_blank');
   };
   const [hello, setHello] = useState('')
   const handleOnHello = () => {
