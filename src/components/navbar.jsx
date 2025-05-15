@@ -33,7 +33,7 @@ function Navbar() {
     }, []);
 
     const handleDownload = () => {
-        window.open('/Prathmesh-Gatade.pdf', '_blank');
+        window.open('/Prathmesh_Gatade_MERN_Resume.pdf', '_blank');
     };
     // Determine the z-index value based on the theme
     const zIndex = theme === 'dark' ? 10 : 50;
