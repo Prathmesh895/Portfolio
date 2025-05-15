@@ -116,8 +116,8 @@ function About() {
                 {/* skill academy course internship  */}
                 <div className='border-b dark:border-slate-700 border-gray-200  lg:pt-0 pt-5 pb-5' data-aos="fade-up">
                   <div className='flex justify-between dark:text-slate-200 lg:text-3xl' >
-                    <h1 className=''>Skillacademy by Testbook</h1>
-                    <h1 className='flex'>remote online&nbsp;<Link href='' target='_blank'><FiExternalLink /></Link></h1>
+                    <h1 className=''>Britwise Technology Pvt Ltd</h1>
+                    <h1 className='flex'>Pune online&nbsp;<Link href='' target='_blank'><FiExternalLink /></Link></h1>
                   </div>
                   <div className='flex justify-between lg:pt-3 lg:text-xl'>
                     <h1 className=''>6 Months Internship <br />In Full Stack Web Developement</h1>
